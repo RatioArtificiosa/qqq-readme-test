@@ -8,18 +8,18 @@
 <p align="center">
 
 ```
- ██████╗ ██████╗ ██████╗
-██╔═══██╗██╔══██╗██╔══██╗
-██║   ██║██████╔╝██████╔╝
-██║▄▄ ██║██╔═══╝ ██╔═══╝
-╚██████╔╝██║     ██║
- ╚══▀▀═╝ ╚═╝     ╚═╝
+ ██████╗  ██████╗  ██████╗
+██╔═══██╗██╔═══██╗██╔═══██╗
+██║   ██║██║   ██║██║   ██║
+██║▄▄ ██║██║▄▄ ██║██║▄▄ ██║
+╚██████╔╝╚██████╔╝╚██████╔╝
+ ╚══▀▀═╝  ╚══▀▀═╝  ╚══▀▀═╝
 ```
 
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1200&color=4CC9F0&center=true&vCenter=true&width=600&lines=The+runtime+built+for+humans+and+AI+agents.;Secure+by+default.+Multi-language.+Fast+where+it+counts.;Run+anything.+Trust+nothing." alt="typing"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&pause=1200&color=4CC9F0&center=true&vCenter=true&width=800&lines=The+runtime+built+for+humans+and+AI+agents.;Secure+by+default.+Multi-language.+Fast+where+it+counts.;Run+anything.+Trust+nothing." alt="typing"/>
 </p>
 
 <p align="center">
@@ -77,16 +77,16 @@ $${\color{#c77dff}\textbf{THE CONSTELLATION}}$$
 This is what QQQ draws when your system is live. Not a screenshot — a **real terminal render** of the flagship visual.
 
 ```
-╭─ MISSION CONTROL ─ myapp ─ dev ─ gen 12 ────────────────────── 412 rps · p99 18ms · ✓ ok ─╮
-│                                                                                            │
-│              ··◍ web                      ●                                                  │
-│            ··  ╱ ╲                       ╱ ╲     the sweep ⟳ rotates once per second;        │
-│         ◉ api ── ⬤ db ──── ⬤ cache            when it crosses a node, the node brightens    │
-│           ╲ ╱        ╲   ╱                       and its edges pulse outward with traffic.    │
-│            ⛓ audit    ⚠ queue                    node size = requests/s · ring = latency ·   │
-│                                                   red ring = error rate · magenta arc =     │
-│  ● healthy  ◍ degraded  ○ stopped  ✕ failed       capability boundary.                       │
-╰────────────────────────────────────────────────────────────────────────────────────────────╯
++-- MISSION CONTROL -- myapp -- dev -- gen 12 --------------- 412 rps | p99 18ms | ok --+
+|                                                                              |
+|          .. o web                        *                                   |
+|        ..  / | \                     / | \    the sweep rotates 1x/sec;     |
+|     * api --- o db ---- o cache         when it crosses a node, the node    |
+|       \ | /      \   /                   brightens and its edges pulse.      |
+|        L audit    ! queue               node size = rps | ring = latency |  |
+|                                              red ring = error rate |       |
+|  * healthy  o degraded  . stopped  x failed   magenta arc = capability.     |
++------------------------------------------------------------------------------+
 ```
 
 | Dimension | Encodes |
@@ -322,7 +322,7 @@ $${\color{#4cc9f0}\textbf{LIVE STATUS}}$$
 
 **Activity Graph**
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=RatioArtificiosa&theme=tokyo-night&hide_border=true" alt="activity"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=RatioArtificiosa&theme=tokyo-night&hide_border=true&area=true" alt="activity graph"/>
 
 </td>
 <td align="center" width="50%">
