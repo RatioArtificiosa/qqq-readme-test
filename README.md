@@ -42,6 +42,16 @@
 
 ---
 
+$${\color{#4cc9f0}\textbf{THE ELEVATOR SPEECH}}$$
+
+**QQQ is a capability-secure WebAssembly Component Model runtime.** It executes code written in five languages — Rust, TypeScript, Go, Python, C/C++ — on a Rust host, where a component has **zero authority you did not grant it**. That authority is enforced *outside* the guest, checkable *before* execution, and recorded *after* every call.
+
+It is the only runtime where **running untrusted code is the default posture**, not a feature flag. Where **AI agents are first-class users**, not an afterthought. Where **determinism is a product feature**, not a testing convenience. And where **the Console makes all of it visible, steerable, and trustworthy** — in a terminal that looks like the cockpit of something alive.
+
+> **One sentence:** *QQQ is the runtime for a world where code is written by machines, runs in many languages, and cannot touch what it was not granted.*
+
+---
+
 $${\color{#4cc9f0}\textbf{THE 60-SECOND VERSION}}$$
 
 Every runtime you have ever deployed shares three assumptions:
@@ -411,7 +421,7 @@ We are going to publish numbers that make us look worse than our competitors, on
 - **Familiarity.** Every JavaScript developer already knows Node. Our onboarding costs more, and that cost is real.
 - **"Drop-in Node replacement."** This is not one. `npm i express` will not work. We provide a migration path and a conversion report — not an interpreter for the Node API surface, because that path kills runtimes.
 
-Every performance claim we publish ships with its hardware, toolchain versions, concurrency levels, percentiles and methodology — and a section stating what the benchmark **does not** measure.
+Every performance claim we publishes ships with its hardware, toolchain versions, concurrency levels, percentiles and methodology — and a section stating what the benchmark **does not** measure.
 
 ---
 
