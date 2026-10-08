@@ -27,8 +27,6 @@
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## RUN ANYTHING. TRUST NOTHING.
-
 ### A Rust-native runtime for software written by humans and machines.
 
 ```text
@@ -62,7 +60,7 @@ That file is the contract. Code cannot read `/etc/passwd`, cannot open an arbitr
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## RUNTIME PULSE
+## $${\color{#0077FF}\textbf{RUNTIME PULSE}}$$
 
 Industrial telemetry first. Flat cells, hard blocks, tiny grid. No gradient wash.
 
@@ -86,7 +84,7 @@ Color carries meaning: blue granted, red denied, amber needs attention, green su
 
 <div style="background-color:#000000;border:1px solid #1E293B;padding:24px">
 
-## LOADING
+## $${\color{#0077FF}\textbf{LOADING}}$$
 
 ```text
 +----------------------------------------------------------------+
@@ -99,7 +97,7 @@ Color carries meaning: blue granted, red denied, amber needs attention, green su
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## THE CAPABILITY GRAPH
+## $${\color{#0077FF}\textbf{THE CAPABILITY GRAPH}}$$
 
 ```text
                  +---------+
@@ -122,7 +120,7 @@ Color carries meaning: blue granted, red denied, amber needs attention, green su
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## THE WALL
+## $${\color{#0077FF}\textbf{THE WALL}}$$
 
 ```text
             UNTRUSTED COMPONENT
@@ -146,7 +144,7 @@ Color carries meaning: blue granted, red denied, amber needs attention, green su
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## FIVE LANGUAGES, ONE RUNTIME
+## $${\color{#0077FF}\textbf{FIVE LANGUAGES, ONE RUNTIME}}$$
 
 ```text
       RUST       TYPESCRIPT
@@ -251,7 +249,7 @@ Write the hot path in Rust, the pipeline in Python, the glue in TypeScript, the 
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## NODE / BUN / QQQ
+## $${\color{#0077FF}\textbf{NODE / BUN / QQQ}}$$
 
 ```text
 THE OLD MODEL                    QQQ
@@ -312,15 +310,15 @@ Node changed JavaScript runtime economics. Bun pushed the runtime layer forward.
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## LIVE STATUS
+## $${\color{#0077FF}\textbf{LIVE STATUS}}$$
 
-Pre-alpha. Version `0.1.1`. Wasmtime 48.0.5 pinned. Checklist 274/587 done (46.7%, dashboard authoritative). Waves 0–2 shipped. Wave 3 code shipped through `a7e88bc`.
+Pre-alpha. Version `0.1.1`. Wasmtime 48.0.5 pinned. Checklist 274/587 done (46.7%, dashboard authoritative).
 
 </div>
 
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
-## INSTALL
+## $${\color{#0077FF}\textbf{INSTALL}}$$
 
 ```bash
 # macOS / Linux
@@ -340,8 +338,6 @@ One binary. No runtime dependency. No version manager bootstrap.
 <p align="center">
   <sub>Apache-2.0 · qqq.codes · Built on Wasmtime and the WebAssembly Component Model</sub>
 </p>
-<p align="center">
-  <sub><em>Run anything. Trust nothing.</em></sub>
-</p>
+<h1 align="center">RUN ANYTHING. TRUST NOTHING.</h1>
 
 </div>
