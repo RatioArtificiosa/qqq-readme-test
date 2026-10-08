@@ -37,7 +37,6 @@ EXPECTED_HEADINGS = [
     "## DETERMINISTIC EXECUTION",
     "## AOT",
     "## HOT SWAP",
-    "## WHERE QQQ LOSES",
     "## STATUS",
     "## DOCUMENTATION",
     "## CONTRIBUTING",

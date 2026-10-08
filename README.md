@@ -204,21 +204,6 @@ The registry holds versioned component generations. Each request leases the curr
 
 ---
 
-## WHERE QQQ LOSES
-
-QQQ is pre-alpha. It does not have the ecosystem of Node. It is not a drop-in replacement. It may lose some benchmarks. We will publish that too.
-
-- Ecosystem size: npm holds millions of packages; QQQ starts near zero.
-- Familiarity: every JavaScript developer knows Node; QQQ's onboarding cost is real.
-- Package compatibility: unmodified npm packages do not run.
-- Mature tooling: debuggers, profilers, and APM integrations Node has had for a decade.
-- Production track record: none yet.
-- Benchmarks: `hello world` HTTP throughput is Bun's home field; parity is the goal, not a beating claim.
-
-This is the territory being entered, not an apology.
-
----
-
 ## STATUS
 
 Populated only from repository evidence. Nothing here is a roadmap promise.
