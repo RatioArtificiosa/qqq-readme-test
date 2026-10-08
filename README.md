@@ -162,7 +162,8 @@ Color carries meaning: blue granted, red denied, amber needs attention, green su
               C/C++
 ```
 
-# ONE RUNTIME. FIVE LANGUAGES. ONE COMPONENT GRAPH.
+# ONE RUNTIME. FIVE LANGUAGES.
+# ONE COMPONENT GRAPH.
 
 Write the hot path in Rust, the pipeline in Python, the glue in TypeScript, the codec in C. One component graph, one type system, no JSON at the seam. Python is first-class. Node and Bun cannot run it at all.
 
