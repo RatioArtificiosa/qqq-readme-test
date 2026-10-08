@@ -178,39 +178,40 @@ Write the hot path in Rust, the pipeline in Python, the glue in TypeScript, the 
 
 <span style="color:#0077FF">`qqqai build --release --aot --aot-cache /absolute/operator-owned/qqq-cache` emits content-addressed `.cwasm` plus JSON provenance in `target/qqq/aot/`. `qqqai serve --aot-cache &lt;same-path&gt;` reuses compatible native code across processes. No ambient Wasmtime cache config is read. The JSON fingerprint is diagnostic metadata, not authorization. Downloaded `.cwasm` is never auto-deserialized. Failed builds leave the last working generation live.</span>
 
-```text
-+-- QQQ AOT PIPELINE ----------------------------------------------------+
-|                                                                        |
+```ansi
+[1;94m
++-- QQQ AOT PIPELINE ---------------------------------------------------+
 |  SOURCE / PACKAGE                                                     |
-|       |                                                               |
-|       v                                                               |
+|  |                                                                    |
+|  v                                                                    |
 |  BOUNDED BUILD + PREPARE  (away from socket executor)                 |
-|       |                                                               |
-|       +--> MANIFEST + CAPABILITY VALIDATION (policy unchanged)         |
-|       |                                                               |
-|       v                                                               |
+|  |                                                                    |
+|  +--> MANIFEST + CAPABILITY VALIDATION (policy unchanged)             |
+|  |                                                                    |
+|  v                                                                    |
 |  MANAGED NATIVE CACHE  --aot-cache /operator-owned/qqq-cache          |
-|       |  explicit path only, no ambient config                        |
-|       +--> .cwasm + JSON provenance  target/qqq/aot/                  |
-|       |  digest = actual loaded bytes, fingerprint = diagnostic       |
-|       v                                                               |
+|  |  explicit path only, no ambient config                             |
+|  +--> .cwasm + JSON provenance  target/qqq/aot/                       |
+|  |  digest = actual loaded bytes, fingerprint = diagnostic            |
+|  v                                                                    |
 |  CANDIDATE GENERATION (immutable)                                     |
-|       |  full handler signature validated, no business call           |
-|       v                                                               |
+|  |  full handler signature validated, no business call                |
+|  v                                                                    |
 |  REVISION-CHECKED PUBLISH                                             |
-|       |  stale build rejected, lock released before execution         |
-|       +--> REGISTRY  name != revision != digest                       |
-|       |                                                               |
-|       +--> LEASE PER REQUEST  (one generation pinned admission->done) |
-|       |         |                                                     |
-|       |         +--> FRESH LIMITED WASMTIME STORE + WIT HANDLER      |
-|       |                                                               |
-|       +--> RETIRE after last lease, then release                      |
-|                                                                        |
-|  SLOW PATH                       FAST PATH                             |
-|  compile once                    reuse native code cross-process       |
+|  |  stale build rejected, lock released before execution              |
+|  +--> REGISTRY  name != revision != digest                            |
+|  |                                                                    |
+|  +--> LEASE PER REQUEST  (one generation pinned admission->done)      |
+|  |         |                                                          |
+|  |         +--> FRESH LIMITED WASMTIME STORE + WIT HANDLER            |
+|  |                                                                    |
+|  +--> RETIRE after last lease, then release                           |
+|                                                                       |
+|  SLOW PATH                       FAST PATH                            |
+|  compile once                    reuse native code cross-process      |
 |  FAILED BUILD -> last good stays live                                 |
-+------------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+[0m
 ```
 
 </div>
@@ -241,16 +242,38 @@ Node changed JavaScript runtime economics. Bun pushed the runtime layer forward.
 
 </div>
 
-<div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
+<div style="background-color:#05070B;border:1px solid #0077FF;padding:24px">
 
-## WHERE WE LOSE
+## $${\color{#0077FF}\textbf{THE CONSOLE}}$$
 
-- `hello world` HTTP throughput. Bun is exceptional. Parity is the goal, not a beating claim.
-- Ecosystem size. npm has millions of packages. QQQ starts near zero.
-- Familiarity. Every JavaScript developer knows Node. Onboarding costs are real.
-- Drop-in Node replacement. This is not one. Migration path and conversion report, not a Node API interpreter.
+### <span style="color:#0077FF">Your running system, drawn live in the terminal. Plain language below.</span>
 
-Measured on this tree: typed marshalling 2 MiB handle path 247.04→4.82 ms, sustained peak RSS 220.0→27.6 MiB.
+<span style="color:#0077FF">The Console is QQQ's terminal dashboard. It draws every running component as a graph, so you see what talks to what, how fast, and with what powers. When something breaks, it tells you why in words, lets you replay the exact moment, shows what a change would do before you make it, and runs anything untrusted with almost no powers.</span>
+
+<span style="color:#0077FF">- **Mission Control** — the live graph. Node size is traffic, the ring is latency, the color is health.</span>
+<span style="color:#0077FF">- **Live Knobs** — turn fuel, memory, and routing up or down without a restart. Guardrails stop you shooting your own foot.</span>
+<span style="color:#0077FF">- **Authority Lens** — see exactly what a component may touch before it runs. Nothing hidden.</span>
+<span style="color:#0077FF">- **Flight Recorder** — every run is recorded. Rewind any moment and play it again exactly.</span>
+<span style="color:#0077FF">- **Probe Playground** — run a stranger's code with zero powers and watch what it reaches for.</span>
+<span style="color:#0077FF">- **Cost Meter** — every request gets a price tag per tenant and route.</span>
+
+```ansi
+[1;94m
++-- QQQ CONSOLE / MISSION CONTROL --------------------------------------+
+|  myapp - dev - gen 12      412 rps - p99 18 ms - ok                   |
+|                                                                       |
+|  web ---- api ---- db ---- cache                                      |
+|    o        *        o        o                                       |
+|                                                                       |
+|  * healthy    o degraded    . stopped    x failed                     |
+|                                                                       |
+|  EXPLAIN:  why did this happen, and what is the fix                   |
+|  REPLAY:   run this exact moment again, bit for bit                   |
+|  SIMULATE: what changes if I touch this first                         |
+|  CONTAIN:  run it with almost no powers and watch                     |
++-----------------------------------------------------------------------+
+[0m
+```
 
 </div>
 
