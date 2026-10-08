@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/security-capability--secure-FF3B4E?style=for-the-badge" alt="security"/>
   <img src="https://img.shields.io/badge/languages-5%20first--class-00E676?style=for-the-badge" alt="languages"/>
   <img src="https://img.shields.io/badge/license-Apache%202.0-FFB020?style=for-the-badge" alt="license"/>
-  <img src="https://img.shields.io/badge/status-pre--alpha-000000?style=for-the-badge&logoColor=white" alt="status"/>
+  <img src="./pre-alpha-badge.svg" alt="status: pre-alpha"/>
 </p>
 
 <p align="center">
