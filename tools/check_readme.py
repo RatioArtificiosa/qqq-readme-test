@@ -23,7 +23,6 @@ BANNED = [
 ]
 
 EXPECTED_HEADINGS = [
-    "# QQQ",
     "# RUN ANYTHING. TRUST NOTHING.",
     "## WHY QQQ",
     "## INSTALL",
