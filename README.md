@@ -178,8 +178,8 @@ Write the hot path in Rust, the pipeline in Python, the glue in TypeScript, the 
 
 <span style="color:#0077FF">`qqqai build --release --aot --aot-cache /absolute/operator-owned/qqq-cache` emits content-addressed `.cwasm` plus JSON provenance in `target/qqq/aot/`. `qqqai serve --aot-cache &lt;same-path&gt;` reuses compatible native code across processes. No ambient Wasmtime cache config is read. The JSON fingerprint is diagnostic metadata, not authorization. Downloaded `.cwasm` is never auto-deserialized. Failed builds leave the last working generation live.</span>
 
-```ansi
-[1;94m
+```text
+
 +-- QQQ AOT PIPELINE ---------------------------------------------------+
 |  SOURCE / PACKAGE                                                     |
 |  |                                                                    |
@@ -211,7 +211,39 @@ Write the hot path in Rust, the pipeline in Python, the glue in TypeScript, the 
 |  compile once                    reuse native code cross-process      |
 |  FAILED BUILD -> last good stays live                                 |
 +-----------------------------------------------------------------------+
-[0m
+
+```
+
+</div>
+
+<div style="background-color:#05070B;border:1px solid #0077FF;padding:24px">
+
+## $${\color{#0077FF}\textbf{HOT SWAP}}$$
+
+### <span style="color:#0077FF">Add and replace pieces without restarting. Node and Bun cannot do this.</span>
+
+<span style="color:#0077FF">Your server never stops listening. Rebuild a component and the next request uses the new generation. Requests already running finish on the old one. Nothing drops, nobody reconnects. A plugin is just a component under a new name: register it and it serves, remove it and it drains, all while the listener stays bound.</span>
+
+<span style="color:#0077FF">How it holds together: the registry keeps named generations; every request takes a lease on the current generation the moment it is admitted; publication is revision-checked so a stale build can never overwrite a newer one; removing a component stops new admissions while outstanding leases run to completion; a failed build leaves the last good generation live. A keep-alive connection simply sees the new generation on its next call. `qqqai dev` watches your source, rebuilds, validates the candidate against the unchanged manifest and full handler signature without calling your code, then activates.</span>
+
+<span style="color:#0077FF">The one thing that still needs a restart is a manifest edit — a change of authority is never applied silently under a running component. That is deliberate.</span>
+
+<span style="color:#0077FF">Why Node and Bun restart: your code IS the heap. Reloading means killing the process, rebuilding the JavaScript heap, rebinding the port, and dropping live connections. In QQQ your code is a component instance behind a registry pointer, so reloading is publishing a pointer while old leases drain.</span>
+
+```text
++-- HOT SWAP -----------------------------------------------------------+
+|  LISTENER stays bound, HOST stays alive                               |
+|                                                                       |
+|  gen 12 LIVE  <-- requests in flight finish here                      |
+|  |                                                                    |
+|  gen 13 PREPARED + VALIDATED (policy unchanged)                       |
+|  |                                                                    |
+|  PUBLISH (revision-checked, stale rejected)                           |
+|  |                                                                    |
+|  gen 13 LIVE  <-- new requests go here                                |
+|  gen 12 RETIRES after its last lease                                  |
+|  FAILED BUILD -> gen 12 stays live, nobody notices                    |
++-----------------------------------------------------------------------+
 ```
 
 </div>
@@ -257,8 +289,8 @@ Node changed JavaScript runtime economics. Bun pushed the runtime layer forward.
 <span style="color:#0077FF">- **Probe Playground** — run a stranger's code with zero powers and watch what it reaches for.</span>
 <span style="color:#0077FF">- **Cost Meter** — every request gets a price tag per tenant and route.</span>
 
-```ansi
-[1;94m
+```text
+
 +-- QQQ CONSOLE / MISSION CONTROL --------------------------------------+
 |  myapp - dev - gen 12      412 rps - p99 18 ms - ok                   |
 |                                                                       |
@@ -272,7 +304,7 @@ Node changed JavaScript runtime economics. Bun pushed the runtime layer forward.
 |  SIMULATE: what changes if I touch this first                         |
 |  CONTAIN:  run it with almost no powers and watch                     |
 +-----------------------------------------------------------------------+
-[0m
+
 ```
 
 </div>
