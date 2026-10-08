@@ -168,6 +168,53 @@ Write the hot path in Rust, the pipeline in Python, the glue in TypeScript, the 
 
 </div>
 
+<div style="background-color:#05070B;border:1px solid #0077FF;padding:24px">
+
+## $${\color{#0077FF}\textbf{AOT PIPELINE}}$$
+
+### <span style="color:#0077FF">Compile once. Validate against the unchanged policy. Lease per request.</span>
+
+<span style="color:#0077FF">AOT moves native compilation out of request dispatch. The request path never compiles. It leases an already-prepared generation and runs it.</span>
+
+<span style="color:#0077FF">`qqqai build --release --aot --aot-cache /absolute/operator-owned/qqq-cache` emits content-addressed `.cwasm` plus JSON provenance in `target/qqq/aot/`. `qqqai serve --aot-cache &lt;same-path&gt;` reuses compatible native code across processes. No ambient Wasmtime cache config is read. The JSON fingerprint is diagnostic metadata, not authorization. Downloaded `.cwasm` is never auto-deserialized. Failed builds leave the last working generation live.</span>
+
+```text
++-- QQQ AOT PIPELINE ----------------------------------------------------+
+|                                                                        |
+|  SOURCE / PACKAGE                                                     |
+|       |                                                               |
+|       v                                                               |
+|  BOUNDED BUILD + PREPARE  (away from socket executor)                 |
+|       |                                                               |
+|       +--> MANIFEST + CAPABILITY VALIDATION (policy unchanged)         |
+|       |                                                               |
+|       v                                                               |
+|  MANAGED NATIVE CACHE  --aot-cache /operator-owned/qqq-cache          |
+|       |  explicit path only, no ambient config                        |
+|       +--> .cwasm + JSON provenance  target/qqq/aot/                  |
+|       |  digest = actual loaded bytes, fingerprint = diagnostic       |
+|       v                                                               |
+|  CANDIDATE GENERATION (immutable)                                     |
+|       |  full handler signature validated, no business call           |
+|       v                                                               |
+|  REVISION-CHECKED PUBLISH                                             |
+|       |  stale build rejected, lock released before execution         |
+|       +--> REGISTRY  name != revision != digest                       |
+|       |                                                               |
+|       +--> LEASE PER REQUEST  (one generation pinned admission->done) |
+|       |         |                                                     |
+|       |         +--> FRESH LIMITED WASMTIME STORE + WIT HANDLER      |
+|       |                                                               |
+|       +--> RETIRE after last lease, then release                      |
+|                                                                        |
+|  SLOW PATH                       FAST PATH                             |
+|  compile once                    reuse native code cross-process       |
+|  FAILED BUILD -> last good stays live                                 |
++------------------------------------------------------------------------+
+```
+
+</div>
+
 <div style="background-color:#05070B;border:1px solid #1E293B;padding:24px">
 
 ## NODE / BUN / QQQ
