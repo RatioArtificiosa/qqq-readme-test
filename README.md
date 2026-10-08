@@ -326,15 +326,6 @@ HUMAN                AI AGENT
 
 # THE RUNTIME HAS TO CHANGE TOO.
 
-<span style="color:#0077FF">That is a stronger reason to exist than "we made another runtime in Rust." The mechanics, borrowed from direct response:</span>
-
-<span style="color:#0077FF">1. **Big claim** — RUN ANYTHING. TRUST NOTHING.</span>
-<span style="color:#0077FF">2. **Agitate the problem** — AI agents write code faster than humans can review it.</span>
-<span style="color:#0077FF">3. **New mechanism** — the runtime itself becomes the security boundary.</span>
-<span style="color:#0077FF">4. **Proof** — capability graph, denied access, replay, deterministic execution, telemetry.</span>
-<span style="color:#0077FF">5. **Specific differentiation** — five languages, one component graph, zero ambient authority.</span>
-<span style="color:#0077FF">6. **CTA** — see below.</span>
-
 # RUN QQQ
 
 </div>
