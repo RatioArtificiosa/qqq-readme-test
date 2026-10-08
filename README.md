@@ -8,18 +8,12 @@
 <p align="center">
 
 ```
-  ____  ____  ____
-  ____  ____  ____
- / __ \/ __ \/ __ \
- / __ \/ __ \/ __ \
-| |  | | |  | | |  |
-| |  | | |  | | |  |
-| |  | | |  | | |  |
-| |  | | |  | | |  |
-| |__| | |__| | |__|
-| |__| | |__| | |__|
- \__\_\__\_\__\_\_\
- \__\_\__\_\__\_\_\
+ ██████╗  ██████╗  ██████╗
+██╔═══██╗██╔═══██╗██╔═══██╗
+██║   ██║██║   ██║██║   ██║
+██║▄▄ ██║██║▄▄ ██║██║▄▄ ██║
+╚██████╔╝╚██████╔╝╚██████╔╝
+ ╚══▄═╝  ╚══▄═╝  ╚══▄═╝
 ```
 
 </p>
@@ -56,11 +50,12 @@ $${\color{#4cc9f0}\textbf{THE 60-SECOND VERSION}}$$
 
 Every runtime you have ever deployed shares three assumptions:
 
-| Assumption | What it costs you |
-|---|---|
-| **One garbage-collected language** | Unpredictable pauses in the request path, and tens of megabytes of baseline memory *per worker* |
-| **Ambient authority** | Any dependency can read any file, open any socket, and phone home. Isolation means a container — heavy, coarse, unprovable |
-| **Humans are the only users** | The CLI is a text adventure. Machine integration is an afterthought bolted on as `--json` |
+<table style="width:100%">
+<tr><th>Assumption</th><th>What it costs you</th></tr>
+<tr><td><strong>One garbage-collected language</strong></td><td>Unpredictable pauses in the request path, and tens of megabytes of baseline memory <em>per worker</em></td></tr>
+<tr><td><strong>Ambient authority</strong></td><td>Any dependency can read any file, open any socket, and phone home. Isolation means a container — heavy, coarse, unprovable</td></tr>
+<tr><td><strong>Humans are the only users</strong></td><td>The CLI is a text adventure. Machine integration is an afterthought bolted on as <code>--json</code></td></tr>
+</table>
 
 QQQ rejects all three.
 
@@ -105,16 +100,17 @@ This is what QQQ draws when your system is live. Not a screenshot — a **real t
 +------------------------------------------------------------------------------+
 ```
 
-| Dimension | Encodes |
-|---|---|
-| **Position** | composition graph adjacency (deterministic force layout) |
-| **Node size** | throughput (requests/s) |
-| **Node fill** | health (ok / warn / error) |
-| **Ring radius** | latency band (p50 → p99) |
-| **Edge thickness** | call volume |
-| **Edge colour** | authority type (network = blue, fs = green, sql = amber, agent = purple) |
-| **Sweep** | the passage of time (1 revolution = 1 s) |
-| **Amber halo** | needs attention |
+<table style="width:100%">
+<tr><th>Dimension</th><th>Encodes</th></tr>
+<tr><td><strong>Position</strong></td><td>composition graph adjacency (deterministic force layout)</td></tr>
+<tr><td><strong>Node size</strong></td><td>throughput (requests/s)</td></tr>
+<tr><td><strong>Node fill</strong></td><td>health (ok / warn / error)</td></tr>
+<tr><td><strong>Ring radius</strong></td><td>latency band (p50 → p99)</td></tr>
+<tr><td><strong>Edge thickness</strong></td><td>call volume</td></tr>
+<tr><td><strong>Edge colour</strong></td><td>authority type (network = blue, fs = green, sql = amber, agent = purple)</td></tr>
+<tr><td><strong>Sweep</strong></td><td>the passage of time (1 revolution = 1 s)</td></tr>
+<tr><td><strong>Amber halo</strong></td><td>needs attention</td></tr>
+</table>
 
 Node and Bun give you `console.log` and a process list. QQQ draws the *actual composition graph*, live, because the Component Model makes it statically knowable and the host mediates every call. No competitor can render this because they cannot see it.
 
@@ -124,12 +120,13 @@ $${\color{#3ddc97}\textbf{THE FOUR VERBS}}$$
 
 Every feature of the QQQ Console is an instance of exactly one verb. If it is not, it is a commodity feature — and it is not built.
 
-| Verb | What it means | Console answer |
-|---|---|---|
-| **EXPLAIN** | Trace any outcome to a causal chain with a fix | Causal Lens · Cost Meter |
-| **REPLAY** | Reproduce any past execution bit-for-bit | Flight Recorder · Regression Vault · Time Travel |
-| **SIMULATE** | Predict the effect of a change before making it | Change Simulator · Drift Sentinel |
-| **CONTAIN** | Run anything untrusted with provable, minimal, reviewable authority | Probe Playground · Supply-Chain Radar · Authority Lens |
+<table style="width:100%">
+<tr><th>Verb</th><th>What it means</th><th>Console answer</th></tr>
+<tr><td><strong>EXPLAIN</strong></td><td>Trace any outcome to a causal chain with a fix</td><td>Causal Lens · Cost Meter</td></tr>
+<tr><td><strong>REPLAY</strong></td><td>Reproduce any past execution bit-for-bit</td><td>Flight Recorder · Regression Vault · Time Travel</td></tr>
+<tr><td><strong>SIMULATE</strong></td><td>Predict the effect of a change before making it</td><td>Change Simulator · Drift Sentinel</td></tr>
+<tr><td><strong>CONTAIN</strong></td><td>Run anything untrusted with provable, minimal, reviewable authority</td><td>Probe Playground · Supply-Chain Radar · Authority Lens</td></tr>
+</table>
 
 This is the admission filter. It keeps the Console from becoming an infinite project.
 
@@ -141,29 +138,31 @@ The Console is the interactive layer of the runtime: install, run, tune, inspect
 
 ### The Original Eight
 
-| # | Pillar | Promise |
-|---|---|---|
-| 1 | **Mission Control** | The Constellation — a live, deterministic graph of the running system. See everything, understand anything. |
-| 2 | **Live Knobs** | Change any runtime parameter — fuel, memory, concurrency, routing — without a restart. Guardrails prevent foot-shooting. |
-| 3 | **Authority Lens** | See exactly what any component can do, before it runs. Time-boxed grants. Capability budgets over time. |
-| 4 | **Time Machine** | *Superseded by the Flight Recorder.* The opt-in recorder is now always-on. |
-| 5 | **Setup Studio** | Zero-config onboarding. A first run that works. Predictive preflight catches problems before they happen. |
-| 6 | **Co-pilot Lanes** | AI agents operate alongside humans with presence, leases, and an Agent Action Ledger. |
-| 7 | **Control Surface SDK** | Ship your own installer wizard and control panels as data. Ops Recipes for common patterns. |
-| 8 | **Terminal Craft** | A TUI that respects the terminal. Plain/JSONL parity is a tested invariant. |
+<table style="width:100%">
+<tr><th>#</th><th>Pillar</th><th>Promise</th></tr>
+<tr><td>1</td><td><strong>Mission Control</strong></td><td>The Constellation — a live, deterministic graph of the running system. See everything, understand anything.</td></tr>
+<tr><td>2</td><td><strong>Live Knobs</strong></td><td>Change any runtime parameter — fuel, memory, concurrency, routing — without a restart. Guardrails prevent foot-shooting.</td></tr>
+<tr><td>3</td><td><strong>Authority Lens</strong></td><td>See exactly what any component can do, before it runs. Time-boxed grants. Capability budgets over time.</td></tr>
+<tr><td>4</td><td><strong>Time Machine</strong></td><td><em>Superseded by the Flight Recorder.</em> The opt-in recorder is now always-on.</td></tr>
+<tr><td>5</td><td><strong>Setup Studio</strong></td><td>Zero-config onboarding. A first run that works. Predictive preflight catches problems before they happen.</td></tr>
+<tr><td>6</td><td><strong>Co-pilot Lanes</strong></td><td>AI agents operate alongside humans with presence, leases, and an Agent Action Ledger.</td></tr>
+<tr><td>7</td><td><strong>Control Surface SDK</strong></td><td>Ship your own installer wizard and control panels as data. Ops Recipes for common patterns.</td></tr>
+<tr><td>8</td><td><strong>Terminal Craft</strong></td><td>A TUI that respects the terminal. Plain/JSONL parity is a tested invariant.</td></tr>
+</table>
 
 ### The Pillars Plus
 
-| # | Pillar | Promise |
-|---|---|---|
-| 9 | **Flight Recorder** | Always-on, bounded, redacted recording of every execution. Export a `.qqq-session` bundle. Replay precisely what an autonomous agent did. |
-| 10 | **Causal Lens** | Trace any outcome — error, denial, latency spike — to its root cause with a fix. `qqqai why` for the terminal. |
-| 11 | **Probe Playground** | Run any component in a zero-grant sandbox. See exactly what it *tries* to do. A minimum-manifest diff shows the least authority it needs. |
-| 12 | **Change Simulator** | Predict the effect of a change before making it. Traffic simulation. Shadow replay. The Drift Sentinel catches configuration drift. |
-| 13 | **Regression Vault** | An incident becomes a sealed test. Red-first gate rejects vacuous tests. Chaos Console reproduces failures by seed. |
-| 14 | **Supply-Chain Radar** | The ongoing dependency authority / provenance / advisory board. An update that widens authority cannot proceed without consent. |
-| 15 | **Time Travel** | Reverse stepping through a recorded execution. *Not in V1* — needs state checkpoints + an RFC. The trace-hash determinism CI + divergence bisect ship first. |
-| 16 | **Cost & Energy Meter** | A price tag per request, tenant, and route. A cost ledger. Budgets that alert. Explain-a-cost → Causal Lens. |
+<table style="width:100%">
+<tr><th>#</th><th>Pillar</th><th>Promise</th></tr>
+<tr><td>9</td><td><strong>Flight Recorder</strong></td><td>Always-on, bounded, redacted recording of every execution. Export a <code>.qqq-session</code> bundle. Replay precisely what an autonomous agent did.</td></tr>
+<tr><td>10</td><td><strong>Causal Lens</strong></td><td>Trace any outcome — error, denial, latency spike — to its root cause with a fix. <code>qqqai why</code> for the terminal.</td></tr>
+<tr><td>11</td><td><strong>Probe Playground</strong></td><td>Run any component in a zero-grant sandbox. See exactly what it <em>tries</em> to do. A minimum-manifest diff shows the least authority it needs.</td></tr>
+<tr><td>12</td><td><strong>Change Simulator</strong></td><td>Predict the effect of a change before making it. Traffic simulation. Shadow replay. The Drift Sentinel catches configuration drift.</td></tr>
+<tr><td>13</td><td><strong>Regression Vault</strong></td><td>An incident becomes a sealed test. Red-first gate rejects vacuous tests. Chaos Console reproduces failures by seed.</td></tr>
+<tr><td>14</td><td><strong>Supply-Chain Radar</strong></td><td>The ongoing dependency authority / provenance / advisory board. An update that widens authority cannot proceed without consent.</td></tr>
+<tr><td>15</td><td><strong>Time Travel</strong></td><td>Reverse stepping through a recorded execution. <em>Not in V1</em> — needs state checkpoints + an RFC. The trace-hash determinism CI + divergence bisect ship first.</td></tr>
+<tr><td>16</td><td><strong>Cost & Energy Meter</strong></td><td>A price tag per request, tenant, and route. A cost ledger. Budgets that alert. Explain-a-cost → Causal Lens.</td></tr>
+</table>
 
 ---
 
