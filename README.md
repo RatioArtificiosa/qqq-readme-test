@@ -253,14 +253,15 @@ Every host capability is defined in WIT **first** and bound into each language *
 
 There is no garbage collector anywhere in the request path — not in the host, not between requests.
 
-| | Node / Bun | QQQ |
-|---|---|---|
-| Isolation unit | Process / container | Component instance |
-| Instantiation | ~10–100 ms | **microseconds** |
-| Memory per unit | Tens of MB | **KB-scale** |
-| GC pauses in request path | Yes | **None** |
-| Languages | 1 | **5** |
-| Capability scoping | Process-wide | **Per-instance, per-request** |
+<table style="width:100%">
+<tr><th></th><th>Node / Bun</th><th>QQQ</th></tr>
+<tr><td>Isolation unit</td><td>Process / container</td><td>Component instance</td></tr>
+<tr><td>Instantiation</td><td>~10–100 ms</td><td><strong>microseconds</strong></td></tr>
+<tr><td>Memory per unit</td><td>Tens of MB</td><td><strong>KB-scale</strong></td></tr>
+<tr><td>GC pauses in request path</td><td>Yes</td><td><strong>None</strong></td></tr>
+<tr><td>Languages</td><td>1</td><td><strong>5</strong></td></tr>
+<tr><td>Capability scoping</td><td>Process-wide</td><td><strong>Per-instance, per-request</strong></td></tr>
+</table>
 
 That is not a tuning difference. It is an architectural one.
 
@@ -351,15 +352,16 @@ $${\color{#4cc9f0}\textbf{LIVE STATUS}}$$
 </tr>
 </table>
 
-| Area | Status |
-|---|---|
-| Capability engine | **Complete.** The narrowing-only invariant is structural — `GrantSet` has no widening API. |
-| HTTP / HTTP2 | **Built.** HTTP/1.1 complete; HTTP/2 module complete (not yet wired to a listener). |
-| Security | **28/30 items done.** Zero `unsafe` blocks across the workspace. External audits are the 2 open items. |
-| Languages | **Experimental probes.** Six narrow HTTP probes pass. Production drivers and conformance remain open. |
-| Packages | **Early.** The registry client, solver, and store are not yet implemented. |
-| Performance | **Honest misses.** Throughput and p99 do not yet meet budget. Published with methodology. |
-| Console (TUI) | **Designed.** 16 pillars specified. Implementation begins after the runtime foundation is green. |
+<table style="width:100%">
+<tr><th>Area</th><th>Status</th></tr>
+<tr><td>Capability engine</td><td><strong>Complete.</strong> The narrowing-only invariant is structural — <code>GrantSet</code> has no widening API.</td></tr>
+<tr><td>HTTP / HTTP2</td><td><strong>Built.</strong> HTTP/1.1 complete; HTTP/2 module complete (not yet wired to a listener).</td></tr>
+<tr><td>Security</td><td><strong>28/30 items done.</strong> Zero <code>unsafe</code> blocks across the workspace. External audits are the 2 open items.</td></tr>
+<tr><td>Languages</td><td><strong>Experimental probes.</strong> Six narrow HTTP probes pass. Production drivers and conformance remain open.</td></tr>
+<tr><td>Packages</td><td><strong>Early.</strong> The registry client, solver, and store are not yet implemented.</td></tr>
+<tr><td>Performance</td><td><strong>Honest misses.</strong> Throughput and p99 do not yet meet budget. Published with methodology.</td></tr>
+<tr><td>Console (TUI)</td><td><strong>Designed.</strong> 16 pillars specified. Implementation begins after the runtime foundation is green.</td></tr>
+</table>
 
 **274 / 587 checklist items done (46.7%).** Every item cites the proposal section it implements. CI fails the build if the cross-reference graph breaks.
 
@@ -377,29 +379,31 @@ $${\color{#ef476f}\textbf{THE ROADMAP}}$$
 
 The roadmap turns 24 audit findings into 8 dependency-ordered waves. A live session is executing them now.
 
-| Wave | Focus | Status |
-|---|---|---|
-| **0** | Safety net — tooling, hygiene | **Shipped** |
-| **1** | Hot-path security — host boundary | **Shipped** |
-| **2** | Panic model — poison-tolerant locks, unwind | **Shipped** |
-| **3** | Resource accounting — memory, pool, marshalling | **In progress** |
-| **4** | Output pump — streaming, backpressure | Not started |
-| **5** | Audit and abuse controls | Not started |
-| **6** | Efficiency and cleanup | Not started |
-| **7** | Future-wiring — transport decision | Not started |
+<table style="width:100%">
+<tr><th>Wave</th><th>Focus</th><th>Status</th></tr>
+<tr><td><strong>0</strong></td><td>Safety net — tooling, hygiene</td><td><strong>Shipped</strong></td></tr>
+<tr><td><strong>1</strong></td><td>Hot-path security — host boundary</td><td><strong>Shipped</strong></td></tr>
+<tr><td><strong>2</strong></td><td>Panic model — poison-tolerant locks, unwind</td><td><strong>Shipped</strong></td></tr>
+<tr><td><strong>3</strong></td><td>Resource accounting — memory, pool, marshalling</td><td><strong>In progress</strong></td></tr>
+<tr><td><strong>4</strong></td><td>Output pump — streaming, backpressure</td><td>Not started</td></tr>
+<tr><td><strong>5</strong></td><td>Audit and abuse controls</td><td>Not started</td></tr>
+<tr><td><strong>6</strong></td><td>Efficiency and cleanup</td><td>Not started</td></tr>
+<tr><td><strong>7</strong></td><td>Future-wiring — transport decision</td><td>Not started</td></tr>
+</table>
 
 ### Beyond V1
 
-| ID | Item | Why |
-|---|---|---|
-| FUT-001 | QQQ Fabric GA | Commercial core — multi-host control plane, fleet policy |
-| FUT-002 | Browser target | The QQQ host compiled to Wasm, running components in-browser |
-| FUT-003 | Native codegen | AOT hot components to native with MPK-based isolation |
-| FUT-005 | Distributed composition | Components calling components over the network |
-| FUT-006 | Formal verification | The ultimate "provable isolation" |
-| FUT-007 | `qqq:ai` | Local inference as a metered capability |
-| FUT-009 | Time-travel debugging | Record/replay with reverse stepping |
-| FUT-010 | QQQ Cloud | A hosted platform — only if the runtime wins on its own |
+<table style="width:100%">
+<tr><th>ID</th><th>Item</th><th>Why</th></tr>
+<tr><td>FUT-001</td><td>QQQ Fabric GA</td><td>Commercial core — multi-host control plane, fleet policy</td></tr>
+<tr><td>FUT-002</td><td>Browser target</td><td>The QQQ host compiled to Wasm, running components in-browser</td></tr>
+<tr><td>FUT-003</td><td>Native codegen</td><td>AOT hot components to native with MPK-based isolation</td></tr>
+<tr><td>FUT-005</td><td>Distributed composition</td><td>Components calling components over the network</td></tr>
+<tr><td>FUT-006</td><td>Formal verification</td><td>The ultimate "provable isolation"</td></tr>
+<tr><td>FUT-007</td><td><code>qqq:ai</code></td><td>Local inference as a metered capability</td></tr>
+<tr><td>FUT-009</td><td>Time-travel debugging</td><td>Record/replay with reverse stepping</td></tr>
+<tr><td>FUT-010</td><td>QQQ Cloud</td><td>A hosted platform — only if the runtime wins on its own</td></tr>
+</table>
 
 ### The end goal
 
@@ -433,12 +437,13 @@ $${\color{#f6e2a8}\textbf{PRICING}}$$
 
 We charge for **governance, evidence, and liability** — never for the ability to execute.
 
-| | Who | Fabric (governance) | Support |
-|---|---|---|---|
-| **Free** | Individuals, solo developers, non-profits, companies under $2M revenue | Included | Community |
-| **Team** | Up to 25 engineers | Included | Email |
-| **Business** | Up to 250 engineers | Included | 8x5 SLA |
-| **Enterprise** | 250+ | Included | 24x7, indemnification, air-gapped |
+<table style="width:100%">
+<tr><th></th><th>Who</th><th>Fabric (governance)</th><th>Support</th></tr>
+<tr><td><strong>Free</strong></td><td>Individuals, solo developers, non-profits, companies under $2M revenue</td><td>Included</td><td>Community</td></tr>
+<tr><td><strong>Team</strong></td><td>Up to 25 engineers</td><td>Included</td><td>Email</td></tr>
+<tr><td><strong>Business</strong></td><td>Up to 250 engineers</td><td>Included</td><td>8x5 SLA</td></tr>
+<tr><td><strong>Enterprise</strong></td><td>250+</td><td>Included</td><td>24x7, indemnification, air-gapped</td></tr>
+</table>
 
 **QQQ Fabric** is a separate, commercially-licensed product: organization-wide policy, fleet attestation, SSO/RBAC, compliance evidence export, audit retention, and air-gapped supply-chain mirrors.
 
