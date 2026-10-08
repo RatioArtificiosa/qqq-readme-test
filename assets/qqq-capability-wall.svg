@@ -13,26 +13,26 @@
     <text x="800" y="225" fill="#F5F7FA" font-size="40">QQQ</text>
     <text x="800" y="275" fill="#00D9FF" font-size="24">capability boundary</text>
     <g font-size="24">
-      <line x1="560" y1="342" x2="560" y2="420" stroke="#0077FF" stroke-width="2"/>
-      <line x1="780" y1="342" x2="780" y2="420" stroke="#0077FF" stroke-width="2"/>
-      <line x1="1000" y1="342" x2="1000" y2="420" stroke="#0077FF" stroke-width="2"/>
-      <line x1="1220" y1="342" x2="1220" y2="420" stroke="#FF3B4E" stroke-width="2"/>
-      <polygon points="560,432 550,414 570,414" fill="#0077FF"/>
-      <polygon points="780,432 770,414 790,414" fill="#0077FF"/>
-      <polygon points="1000,432 990,414 1010,414" fill="#0077FF"/>
-      <text x="1220" y="470" fill="#FF3B4E" font-size="44">X</text>
-      <rect x="460" y="490" width="200" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>
-      <text x="560" y="535" fill="#F5F7FA">FILE</text>
-      <rect x="680" y="490" width="200" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>
-      <text x="780" y="535" fill="#F5F7FA">HTTP</text>
-      <rect x="900" y="490" width="200" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>
-      <text x="1000" y="535" fill="#F5F7FA">CRYPTO</text>
-      <rect x="1120" y="490" width="200" height="70" fill="none" stroke="#FF3B4E" stroke-width="2"/>
-      <text x="1220" y="535" fill="#F5F7FA">SQL</text>
-      <text x="560" y="615" fill="#00E676">ALLOW</text>
-      <text x="780" y="615" fill="#00E676">ALLOW</text>
-      <text x="1000" y="615" fill="#00E676">ALLOW</text>
-      <text x="1220" y="615" fill="#FF3B4E">DENY</text>
+      <line x1="500" y1="342" x2="500" y2="420" stroke="#0077FF" stroke-width="2"/>
+      <line x1="700" y1="342" x2="700" y2="420" stroke="#0077FF" stroke-width="2"/>
+      <line x1="900" y1="342" x2="900" y2="420" stroke="#0077FF" stroke-width="2"/>
+      <line x1="1100" y1="342" x2="1100" y2="420" stroke="#FF3B4E" stroke-width="2"/>
+      <polygon points="500,432 490,414 510,414" fill="#0077FF"/>
+      <polygon points="700,432 690,414 710,414" fill="#0077FF"/>
+      <polygon points="900,432 890,414 910,414" fill="#0077FF"/>
+      <text x="1100" y="470" fill="#FF3B4E" font-size="44">X</text>
+      <rect x="410" y="490" width="180" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>
+      <text x="500" y="535" fill="#F5F7FA">FILE</text>
+      <rect x="610" y="490" width="180" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>
+      <text x="700" y="535" fill="#F5F7FA">HTTP</text>
+      <rect x="810" y="490" width="180" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>
+      <text x="900" y="535" fill="#F5F7FA">CRYPTO</text>
+      <rect x="1010" y="490" width="180" height="70" fill="none" stroke="#FF3B4E" stroke-width="2"/>
+      <text x="1100" y="535" fill="#F5F7FA">SQL</text>
+      <text x="500" y="615" fill="#00E676">ALLOW</text>
+      <text x="700" y="615" fill="#00E676">ALLOW</text>
+      <text x="900" y="615" fill="#00E676">ALLOW</text>
+      <text x="1100" y="615" fill="#FF3B4E">DENY</text>
       <text x="800" y="665" fill="#94A3B8" font-size="22">guest side above the wall, host side below it</text>
     </g>
   </g>
