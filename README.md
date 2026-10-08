@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/RatioArtificiosa/qqq-readme-test/main/qqq-logo.png" alt="QQQ — Neon Cyberpunk Terminal" width="100%"/>
+  <img src="https://raw.githubusercontent.com/RatioArtificiosa/qqq-readme-test/master/qqq-logo.png" alt="QQQ — Neon Cyberpunk Terminal" width="100%"/>
 </p>
 
 <p align="center">
@@ -168,13 +168,6 @@ irm https://qqq.codes/install.ps1 | iex
 
 # Rust
 cargo install qqqai
-
-# Node / Bun developers
-npm install -g qqqai
-
-# Package managers
-brew install qqqai        # macOS / Linux
-scoop install qqqai       # Windows
 ```
 
 One binary. No runtime dependency. No version manager bootstrap.
