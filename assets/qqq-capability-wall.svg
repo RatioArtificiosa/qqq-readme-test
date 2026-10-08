@@ -14,13 +14,13 @@
     <text x="800" y="275" fill="#00D9FF" font-size="24">capability boundary</text>
     <g font-size="24">
       <line x1="560" y1="342" x2="560" y2="420" stroke="#0077FF" stroke-width="2"/>
-      <line x1="720" y1="342" x2="720" y2="420" stroke="#0077FF" stroke-width="2"/>
-      <line x1="880" y1="342" x2="880" y2="420" stroke="#0077FF" stroke-width="2"/>
-      <line x1="1040" y1="342" x2="1040" y2="420" stroke="#FF3B4E" stroke-width="2"/>
+      <line x1="780" y1="342" x2="780" y2="420" stroke="#0077FF" stroke-width="2"/>
+      <line x1="1000" y1="342" x2="1000" y2="420" stroke="#0077FF" stroke-width="2"/>
+      <line x1="1220" y1="342" x2="1220" y2="420" stroke="#FF3B4E" stroke-width="2"/>
       <polygon points="560,432 550,414 570,414" fill="#0077FF"/>
-      <polygon points="720,432 710,414 730,414" fill="#0077FF"/>
-      <polygon points="880,432 870,414 890,414" fill="#0077FF"/>
-      <text x="1040" y="470" fill="#FF3B4E" font-size="44">X</text>
+      <polygon points="780,432 770,414 790,414" fill="#0077FF"/>
+      <polygon points="1000,432 990,414 1010,414" fill="#0077FF"/>
+      <text x="1220" y="470" fill="#FF3B4E" font-size="44">X</text>
       <rect x="460" y="490" width="200" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>
       <text x="560" y="535" fill="#F5F7FA">FILE</text>
       <rect x="680" y="490" width="200" height="70" fill="none" stroke="#0077FF" stroke-width="2"/>

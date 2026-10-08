@@ -19,11 +19,11 @@
       <text x="770" y="360">calls tools</text><text x="770" y="405">accesses resources</text>
     </g>
     <line x1="770" y1="130" x2="770" y2="150" stroke="#8B5CF6" stroke-width="2"/>
-    <line x1="540" y1="262" x2="1050" y2="262" stroke="#8B5CF6" stroke-width="2"/>
-    <polygon points="1062,262 1044,252 1044,272" fill="#8B5CF6"/>
-    <rect x="1050" y="192" width="330" height="140" fill="none" stroke="#0077FF" stroke-width="3"/>
-    <text x="1215" y="252" fill="#F5F7FA" font-size="40">QQQ</text>
-    <text x="1215" y="295" fill="#00D9FF" font-size="22">execution boundary</text>
+    <line x1="540" y1="236" x2="1050" y2="236" stroke="#8B5CF6" stroke-width="2"/>
+    <polygon points="1062,236 1044,226 1044,246" fill="#8B5CF6"/>
+    <rect x="1050" y="166" width="330" height="140" fill="none" stroke="#0077FF" stroke-width="3"/>
+    <text x="1215" y="226" fill="#F5F7FA" font-size="40">QQQ</text>
+    <text x="1215" y="269" fill="#00D9FF" font-size="22">execution boundary</text>
     <text x="800" y="490" fill="#94A3B8" font-size="24">agents generate, modify, download, execute, connect - the boundary holds</text>
   </g>
 </svg>

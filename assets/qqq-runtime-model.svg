@@ -16,9 +16,9 @@
     <polygon points="190,232 180,214 200,214" fill="#94A3B8"/>
     <rect x="80" y="250" width="220" height="64" fill="none" stroke="#8B5CF6" stroke-width="2"/>
     <text x="190" y="293" fill="#F5F7FA">AI AGENT</text>
-    <text x="330" y="293" fill="#94A3B8">GENERATED SOFTWARE</text>
-    <line x1="330" y1="240" x2="330" y2="180" stroke="#8B5CF6" stroke-width="2"/>
-    <polygon points="330,168 320,186 340,186" fill="#8B5CF6"/>
+    <text x="460" y="293" fill="#94A3B8">GENERATED SOFTWARE</text>
+    <line x1="460" y1="258" x2="460" y2="200" stroke="#8B5CF6" stroke-width="2"/>
+    <polygon points="460,188 450,206 470,206" fill="#8B5CF6"/>
     <rect x="520" y="140" width="280" height="80" fill="none" stroke="#00D9FF" stroke-width="2"/>
     <text x="660" y="190" fill="#F5F7FA">WEBASSEMBLY</text>
     <line x1="380" y1="180" x2="505" y2="180" stroke="#00D9FF" stroke-width="2"/>

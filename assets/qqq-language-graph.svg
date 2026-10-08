@@ -14,7 +14,7 @@
       <line x1="800" y1="90" x2="800" y2="150"/><line x1="1080" y1="90" x2="1080" y2="150"/>
       <line x1="1390" y1="90" x2="1390" y2="150"/>
     </g>
-    <rect x="450" y="150" width="700" height="90" fill="none" stroke="#8B5CF6" stroke-width="3"/>
+    <rect x="150" y="150" width="1300" height="90" fill="none" stroke="#8B5CF6" stroke-width="3"/>
     <text x="800" y="207" fill="#F5F7FA" font-size="32">QQQ COMPONENT GRAPH</text>
     <text x="800" y="300" fill="#94A3B8" font-size="22">LANGUAGE to WASM COMPONENT to WIT / COMPONENT MODEL to QQQ</text>
     <line x1="800" y1="240" x2="800" y2="330" stroke="#8B5CF6" stroke-width="2"/>
