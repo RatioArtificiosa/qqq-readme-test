@@ -65,17 +65,17 @@ That file is the contract. Code cannot read `/etc/passwd`, cannot open an arbitr
 Industrial telemetry first. Flat cells, hard blocks, tiny grid. No gradient wash.
 
 ```text
-+-- QQQ RUNTIME / LIVE --------------------------------------------------+
-| REQUESTS            LATENCY              MEMORY            COMPONENTS   |
-| 412 rps             18 ms p99            64 MiB            27 ACTIVE    |
-| [################]  [####..............] [#######.........] [*][*][*]   |
-|                                                                         |
-| CAPABILITIES                                                            |
++-- QQQ RUNTIME / LIVE ----------------------------------------------------+
+| REQUESTS            LATENCY              MEMORY            COMPONENTS    |
+| 412 rps             18 ms p99            64 MiB            27 ACTIVE     |
+| [################]  [####..............] [#######.........] [*][*][*]    |
+|                                                                          |
+| CAPABILITIES                                                             |
 | FS      [########] GRANTED                                               |
 | HTTP    [###########] GRANTED                                            |
 | CRYPTO  [####....] GRANTED                                               |
 | SQL     [........] DENIED                                                |
-+-------------------------------------------------------------------------+
++--------------------------------------------------------------------------+
 ```
 
 Color carries meaning: blue granted, red denied, amber needs attention, green success, cyan live data, violet AI and components.
@@ -87,10 +87,10 @@ Color carries meaning: blue granted, red denied, amber needs attention, green su
 ## $${\color{#0077FF}\textbf{LOADING}}$$
 
 ```text
-+----------------------------------------------------------------+
-| LOADING..                                                      |
++-----------------------------------------------------------------+
+| LOADING..                                                       |
 | [##..##..##..##................................]                |
-+----------------------------------------------------------------+
++-----------------------------------------------------------------+
 ```
 
 </div>
