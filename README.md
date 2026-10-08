@@ -1,7 +1,7 @@
 # QQQ
 
 <p align="center">
-  <img src="./assets/qqq-hero.png" alt="QQQ geometric block wordmark on a dark instrumentation grid" width="100%"/>
+  <img src="./assets/qqq-hero.jpg" alt="QQQ logo" width="100%"/>
 </p>
 
 <p align="center">

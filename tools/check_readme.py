@@ -94,7 +94,7 @@ def main():
         if not p.exists():
             fail("broken local link: %s" % m.group(1))
 
-    for asset in ("assets/qqq-hero.png", "assets/qqq-social-preview.png"):
+    for asset in ("assets/qqq-hero.jpg", "assets/qqq-social-preview.png"):
         p = ROOT / asset
         if not p.exists():
             fail("missing asset: %s" % asset)
